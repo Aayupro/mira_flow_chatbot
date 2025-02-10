@@ -1,0 +1,159 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background */
+    display: flex;
+    justify-content: center; /* Center the chat container */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+.chat-container {
+    width: 400px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden; /* Hide overflowing content */
+    display: flex;
+    flex-direction: column; /* Arrange elements vertically */
+}
+
+#chat-window {
+    flex-grow: 1; /* Allow chat window to expand */
+    padding: 10px;
+    overflow-y: scroll; /* Add vertical scrollbar if needed */
+    height: 300px; /* Set a specific height */
+}
+
+.user {
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.bot {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.input-area {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: flex;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+#send-button {
+    padding: 5px 10px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+nav {
+    background-color: #ffffff; /* Dark background color */
+    padding: 10px;
+    position: fixed; /* Stays at the top */
+    width: 100%;
+    top: 0; /* Position at the top */
+    z-index: 100; /* Ensure it's above other content */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+  }
+  
+  nav:hover {
+      background-color: #000000; /* Slightly lighter on hover */
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Vertically center items */
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    margin: 0 auto; /* Center the navbar */
+    padding: 0 20px; /* Add some side padding */
+  }
+  
+  .logo {
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Smooth transform transition */
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Scale up slightly on hover */
+  }
+  
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 5px 10px; /* Add some padding around the link text */
+    border-radius: 5px; /* Round the corners of the padding */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  }
+  
+  .nav-links a:hover {
+    background-color: #7bca8e; /* Darker background on hover */
+    color: #f0f0f0; /* Slightly lighter text on hover */
+  }
+  
+  /* Responsive Styles (for smaller screens) */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stack items vertically */
+      align-items: flex-start; /* Align to the left */
+      padding: 10px;
+    }
+  
+    .nav-links {
+      flex-direction: column; /* Stack links vertically */
+      margin-top: 10px; /* Add some top margin */
+      width: 100%; /* Make links take full width */
+    }
+  
+    .nav-links li {
+      margin: 5px 0; /* Add vertical margin */
+      margin-left: 0; /* Remove horizontal margin */
+      text-align: center; /* Center the text */
+    }
+  
+    .nav-links a {
+      display: block; /* Make links take full width */
+      padding: 10px; /* Increase padding */
+      border-radius: 0; /* Remove border radius */
+    }
+  }
+  
+  /* Optional: Add a subtle box shadow to the navbar */
+  nav {
+      box-shadow: 0 2px 5px #7bca8e;
+  }
+  body {
+    background-image: url("istockphoto-1402338966-612x612.jpg");
+    /* Other background properties (see below) */
+    background-size: cover; /* This is the key! */
+  background-repeat: no-repeat; /* Optional: Prevents repetition */
+  background-position: center center; /* Optional: Centers the image */
+  /* Other background properties as needed */
+  }
+  

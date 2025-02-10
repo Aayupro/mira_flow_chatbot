@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Service Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  </head>
+<body>
+
+    <nav>
+        <div class="navbar">
+          <a href="#" class="logo">My Logo</a>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+  
+    <div class="chat-container">
+        <div id="chat-window">
+            </div>
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatWindow = document.getElementById('chat-window');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        function sendMessage() {
+            const message = userInput.value;
+            if (message.trim() === "") return; // Don't send empty messages
+
+            displayMessage(message, 'user');
+            userInput.value = '';
+
+            fetch('{{ url_for("chat") }}', {  // Correct fetch URL
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => {
+                if (!response.ok) { // Check for HTTP errors
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Bot Response:", data);
+                displayMessage(data.response, 'bot');
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                displayMessage("Error communicating with the server.", 'bot');
+            });
+        }
+
+        userInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        sendButton.addEventListener('click', sendMessage);
+
+        function displayMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add(sender);
+            messageDiv.textContent = message;
+            chatWindow.appendChild(messageDiv);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+       // Removed the duplicate fetch call here.
+    </script>
+</body>
+</html>
