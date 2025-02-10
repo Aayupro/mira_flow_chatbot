@@ -54,3 +54,104 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    from mira_sdk import MiraClient, Flow
+
+# Initialize the client
+client = MiraClient(config={"API_KEY": "YOUR_API_KEY"})
+
+version = "1.0.0"
+input_data = {}
+
+# If no version is provided, latest version is used by default
+if version:
+    flow_name = f"@aayushalways/compound/{version}"
+else:
+    flow_name = "@aayushalways/compound"
+
+result = client.flow.execute(flow_name, input_data)
+print(result)
+
+from mira_sdk import MiraClient, Flow
+
+# Initialize the client
+client = MiraClient(config={"API_KEY": "YOUR_API_KEY"})
+
+version = "1.0.0"
+input_data = {}
+
+# If no version is provided, latest version is used by default
+if version:
+    flow_name = f"@aayushalways/intent-recognition-flow/{version}"
+else:
+    flow_name = "@aayushalways/intent-recognition-flow"
+
+result = client.flow.execute(flow_name, input_data)
+print(result)
+
+from mira_sdk import MiraClient, Flow
+
+# Initialize the client
+client = MiraClient(config={"API_KEY": "YOUR_API_KEY"})
+
+version = "1.0.0"
+input_data = {}
+
+# If no version is provided, latest version is used by default
+if version:
+    flow_name = f"@aayushalways/entity/{version}"
+else:
+    flow_name = "@aayushalways/entity"
+
+result = client.flow.execute(flow_name, input_data)
+print(result)
+from mira_sdk import MiraClient, Flow
+
+# Initialize the client
+client = MiraClient(config={"API_KEY": "YOUR_API_KEY"})
+
+version = "1.0.0"
+input_data = {}
+
+# If no version is provided, latest version is used by default
+if version:
+    flow_name = f"@aayushalways/response/{version}"
+else:
+    flow_name = "@aayushalways/response"
+
+result = client.flow.execute(flow_name, input_data)
+print(result)
+
+from mira_sdk import MiraClient, Flow
+
+# Initialize the client
+client = MiraClient(config={"API_KEY": "YOUR_API_KEY"})
+
+version = "1.0.0"
+input_data = {}
+
+# If no version is provided, latest version is used by default
+if version:
+    flow_name = f"@aayushalways/data-r-f/{version}"
+else:
+    flow_name = "@aayushalways/data-r-f"
+
+result = client.flow.execute(flow_name, input_data)
+print(result)
+
+from mira_sdk import MiraClient, Flow
+
+# Initialize the client
+client = MiraClient(config={"API_KEY": "YOUR_API_KEY"})
+
+version = "1.0.0"
+input_data = {}
+
+# If no version is provided, latest version is used by default
+if version:
+    flow_name = f"@aayushalways/fallback/{version}"
+else:
+    flow_name = "@aayushalways/fallback"
+
+result = client.flow.execute(flow_name, input_data)
+print(result)
